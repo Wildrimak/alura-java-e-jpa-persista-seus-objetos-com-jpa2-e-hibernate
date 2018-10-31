@@ -15,3 +15,11 @@
 ### Adicionar conector do mysql 5 nas libs
 
 ### Adicionar conector do mysql 5 no build path
+
+## Configurar Mysql:
+
+### Instalar mysql, criar usuario que possa ser acessado sem modo "sudo" para não ter erros com o eclipse
+
+### Criar banco financas
+
+### Executar TesteConta e analisar se banco foi criado no mysql

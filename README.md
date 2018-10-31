@@ -10,4 +10,8 @@
 
 ### Adicionar todas os jar em sua pasta lib
 
-### Adicionar todos os jar ali presente no buith path
+### Adicionar todos os jar ali presente no build path
+
+### Adicionar conector do mysql 5 nas libs
+
+### Adicionar conector do mysql 5 no build path

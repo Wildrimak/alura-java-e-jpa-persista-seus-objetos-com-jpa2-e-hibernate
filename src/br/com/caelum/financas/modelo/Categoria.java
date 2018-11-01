@@ -14,6 +14,14 @@ public class Categoria {
 
 	private String nome;
 
+	@Deprecated
+	public Categoria() {
+	}
+
+	public Categoria(String nome) {
+		this.nome = nome;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -27,14 +35,6 @@ public class Categoria {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	@Deprecated
-	public Categoria() {
-	}
-
-	public Categoria(String nome) {
 		this.nome = nome;
 	}
 

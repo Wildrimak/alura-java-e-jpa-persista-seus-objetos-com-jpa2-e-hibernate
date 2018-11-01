@@ -15,7 +15,7 @@ public class TesteConta {
 		
 		EntityManager em = new JPAUtil().getEntityManager();
 		
-		em.getTransaction().begin();;
+		em.getTransaction().begin();
 		em.persist(conta);
 		em.getTransaction().commit();
 		

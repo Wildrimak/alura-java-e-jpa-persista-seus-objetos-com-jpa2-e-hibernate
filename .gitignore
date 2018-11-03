@@ -2,7 +2,7 @@
 *.class
 
 # Files
-.classpath
+*.classpath
 
 # Folders
 .settings/

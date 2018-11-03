@@ -1,6 +1,12 @@
 # Compiled class file
 *.class
 
+# Files
+.classpath
+
+# Folders
+.settings/
+
 # Log file
 *.log
 *.lck

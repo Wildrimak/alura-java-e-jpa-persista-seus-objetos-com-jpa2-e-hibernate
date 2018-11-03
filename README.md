@@ -1,25 +1,31 @@
-# alura-java-e-jpa-persista-seus-objetos-com-jpa2-e-hibernate-financas
+#### Projeto: alura-java-e-jpa-persista-seus-objetos-com-jpa2-e-hibernate-financas
 
-## Configurar bibliotecas
+##### Como as bibliotecas foram configuradas:
 
-### Criar pasta lib na raiz do projeto
+* Criei pasta lib na raiz do projeto
 
-### Ir no site do hibernate, entrar em hibernate orm, e baixar versão final do framework
+* Fui no site do hibernate, entrei em hibernate orm, e baixei a versão final do framework
 
-### Descompactar arquivo zip, dentro do pasta, entrar em lib/required
+* Descompactei arquivo zip, e após isso entrei em lib/required
 
-### Adicionar todas os jar em sua pasta lib
+* Adicionei todos os jar na pasta pasta lib que está na raiz do meu projeto
 
-### Adicionar todos os jar ali presente no build path
+* Adicionei todos os jar que estavam presentes no lib/required no build path do meu projeto
 
-### Adicionar conector do mysql 5 nas libs
+* Baixei connector do mysql 5
 
-### Adicionar conector do mysql 5 no build path
+* Adicionei conector do mysql 5 nas libs do meu projeto
 
-## Configurar Mysql:
+* Adicionei conector do mysql 5 no build path
 
-### Instalar mysql, criar usuario que possa ser acessado sem modo "sudo" para não ter erros com o eclipse
+##### Como Configurei Mysql:
 
-### Criar banco financas
+* Instalei mysql 
 
-### Executar TesteConta e analisar se banco foi criado no mysql
+* Criei usuario que pode ser acessado sem modo "sudo" para não ter erros com o eclipse
+
+* Criei banco de nome financas
+
+* Executei PopulaConta.java 
+
+* Analisei se banco foi criado no mysql

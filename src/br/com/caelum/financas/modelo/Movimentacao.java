@@ -32,7 +32,7 @@ public class Movimentacao {
 	
 	private String descricao;
 	
-	@ManyToOne
+	@ManyToOne()
 	private Conta conta;
 	
 	@ManyToMany

@@ -18,7 +18,7 @@ public class TesteMovimentacoesPorCategoria {
 		Categoria categoria = new Categoria();
 		categoria.setId(1);
 
-		String jpql = "select m from Movimentacao m join m.categoria c where c = :pCategoria";
+		String jpql = "select m from Movimentacao m join m.categorias c where c = :pCategoria";
 
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("pCategoria", categoria);

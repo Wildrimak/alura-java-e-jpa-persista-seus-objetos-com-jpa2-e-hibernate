@@ -3,7 +3,7 @@ package br.com.caelum.financas.teste;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.modelo.Movimentacao;
@@ -23,7 +23,7 @@ public class TesteJPQL {
 		String jpql = "select m from Movimentacao m where m.conta = :pConta" + " and tipo = :pTipo"
 				+ " order by m.valor desc";
 
-		Query query = entityManager.createQuery(jpql);
+		TypedQuery<Movimentacao> query = entityManager.createQuery(jpql, Movimentacao.class);
 		query.setParameter("pConta", conta);
 		query.setParameter("pTipo", TipoMovimentacao.SAIDA);
 

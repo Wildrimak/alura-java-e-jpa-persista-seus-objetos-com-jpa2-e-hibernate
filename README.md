@@ -29,3 +29,10 @@
 * Executei PopulaConta.java 
 
 * Analisei se banco foi criado no mysql
+
+##### Metas atuais:
+
+[ ] Organizar código
+
+[ ] Fazer mais querys para treinamento e aperfeiçoar logica do modelo
+

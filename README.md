@@ -38,3 +38,7 @@
 
 [ ] Fazer mais querys para treinamento e aperfeiçoar logica do modelo > 12:40
 
+##### Pesquisar depois
+https://thoughts-on-java.org/jpql/
+
+

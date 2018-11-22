@@ -32,7 +32,9 @@
 
 ##### Metas atuais:
 
-[ ] Organizar código
+[ ] Criar metodos que representam relatorios de um sistema > 10:20
 
-[ ] Fazer mais querys para treinamento e aperfeiçoar logica do modelo
+[ ] Organizar código e seus testes associando-os aos nomes da classe > 11:30
+
+[ ] Fazer mais querys para treinamento e aperfeiçoar logica do modelo > 12:40
 

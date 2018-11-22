@@ -5,7 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import br.com.caelum.financas.modelo.Categoria;
 import br.com.caelum.financas.modelo.Movimentacao;
 import br.com.caelum.financas.util.JPAUtil;
 
@@ -15,13 +14,13 @@ public class TesteMovimentacoesPorCategoria {
 		EntityManager entityManager = new JPAUtil().getEntityManager();
 		entityManager.getTransaction().begin();
 
-		Categoria categoria = new Categoria();
-		categoria.setId(1);
+//		Categoria categoria = new Categoria();
+//		categoria.setId(1);
 
 		String jpql = "select m from Movimentacao m join m.categorias c where c = :pCategoria";
 
 		TypedQuery<Movimentacao> query = entityManager.createQuery(jpql, Movimentacao.class);
-		query.setParameter("pCategoria", categoria);
+//		query.setParameter("pCategoria", categoria);
 
 		List<Movimentacao> resultados = query.getResultList();
 

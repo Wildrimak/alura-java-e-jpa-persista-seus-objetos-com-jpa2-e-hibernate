@@ -16,8 +16,8 @@ public class Cliente {
 	private String nome;
 	private String profissao;
 	private String endereco;
-	
-	@JoinColumn(unique=true)
+
+	@JoinColumn(unique = true)
 	@OneToOne
 	private Conta conta;
 
@@ -55,5 +55,13 @@ public class Cliente {
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente ID: " + this.id + "\n" + 
+				"Cliente Nome: " + this.nome + "\n" + 
+				"Cliente Profissao: " + this.profissao + "\n" +
+				"Cliente Conta ID: " + this.conta.getId() + "\n";
 	}
 }

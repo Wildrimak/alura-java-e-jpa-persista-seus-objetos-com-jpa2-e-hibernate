@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import br.com.caelum.financas.modelo.Categoria;
@@ -34,9 +35,11 @@ public class ClienteDAO {
 		
 		this.entityManager.getTransaction().begin();
 		
-		String querySelectClientesDoBanco = "select cl from Cliente cl join Conta co where co.banco like(:pNomeDoBanco)";
+		//Query esta como se as duas tabelas nao fossem relacionadas entre si, corrigir isso depois
+		String querySelectClientesDoBanco = "select cl from Cliente cl, Conta co where cl.conta.id = co.id and co.banco like :pNomeDoBanco";
 		TypedQuery<Cliente> typedQuery = entityManager.createQuery(querySelectClientesDoBanco, Cliente.class);
-		typedQuery.setParameter("pNomeDoBanco", nomeDoBanco);
+		typedQuery.setParameter("pNomeDoBanco", "%"+nomeDoBanco+"%");
+		
 		List<Cliente> clientes = typedQuery.getResultList();
 		
 		this.entityManager.getTransaction().commit();
@@ -45,50 +48,99 @@ public class ClienteDAO {
 	}
 	
 	public List<Cliente> getClientesDaAgencia(String nomeDaAgencia) {
-		return null;
+		
+		this.entityManager.getTransaction().begin();
+
+		String query = "select cl from Cliente cl, Conta co where cl.conta.id = co.id and co.agencia like :pNomeDaAgencia";
+		TypedQuery<Cliente> typedQuery = entityManager.createQuery(query, Cliente.class);
+		typedQuery.setParameter("pNomeDaAgencia", "%"+nomeDaAgencia+"%");
+		
+		List<Cliente> clientes = typedQuery.getResultList();
+		
+		this.entityManager.getTransaction().commit();
+		return clientes;
 	}
 	
-	public Cliente getClientePorNumero(String numero){
-		return null;
+	public Cliente getClientePorNumeroDaConta(String numero){
+		
+		this.entityManager.getTransaction().begin();
+		
+		String query = "select cl from Cliente cl, Conta co where cl.conta.id = co.id and co.numero like :pNumeroDaAgencia";
+		TypedQuery<Cliente> typedQuery = entityManager.createQuery(query, Cliente.class);
+		typedQuery.setParameter("pNumeroDaAgencia", numero);
+		Cliente cliente;
+
+		try {
+			cliente = typedQuery.getSingleResult();
+		} catch (NoResultException noResultException) {
+			cliente = null;
+		}
+
+		this.entityManager.getTransaction().commit();
+		return cliente;
 	}
 	
 	public Cliente getClientePorId(Integer id){
-		return null;
+		
+		this.entityManager.getTransaction().begin();
+
+		String query = "select cl from Cliente cl where cl.id = :pId";
+		TypedQuery<Cliente> typedQuery = entityManager.createQuery(query, Cliente.class);
+		typedQuery.setParameter("pId", id);
+		Cliente cliente;
+		
+		try {
+			cliente = typedQuery.getSingleResult();
+		} catch (Exception e) {
+			cliente = null;
+		}
+		
+		this.entityManager.getTransaction().commit();
+		return cliente;
 	}
 	
 	public List<Cliente> getClientesCujoTitularContenha(String nome){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesComMovimentacoesFinanceirasAcimaDe(double valor){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesComMovimentacoesFinanceirasAbaixoDe(double valor){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasMovimentacoesForamEntradas(){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasMovimentacoesForamSaidas(){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasMovimentacoesForamFeitasNaData(Calendar data){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasMovimentacoesForamFeitasAntesDaData(Calendar data){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasMovimentacoesForamFeitasDepoisDaData(Calendar data){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 	
 	public List<Cliente> getClientesCujasCategoriasForam(Categoria... categorias){
-		return null;
+		List<Cliente> clientes = null;
+		return clientes;
 	}
 }

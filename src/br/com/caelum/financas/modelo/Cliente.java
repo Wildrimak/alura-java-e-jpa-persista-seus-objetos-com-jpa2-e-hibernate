@@ -59,9 +59,9 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente ID: " + this.id + "\n" + 
-				"Cliente Nome: " + this.nome + "\n" + 
-				"Cliente Profissao: " + this.profissao + "\n" +
-				"Cliente Conta ID: " + this.conta.getId() + "\n";
+		return "ID do cliente: " + this.id + "\n" + 
+				"Nome do cliente: " + this.nome + "\n" + 
+				"Profissao do cliente: " + this.profissao + "\n" +
+				"ID da Conta do Cliente: " + this.conta.getId() + "\n";
 	}
 }
